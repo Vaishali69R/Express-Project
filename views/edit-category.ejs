@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <%-include('__bootstrap.ejs')%>
+    </head>
+    <body>
+        <%-include('__header.ejs')%>
+        <div class="container mt-4">
+            <form action="/category/edit-category" method="post">
+                
+                <div class="form-group">
+                    <input value="<%=category.name%>" name="title" type="text" placeholder="Enter category title" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="id" value="<%=category.id%>" placeholder="Enter category id" class="form-control"/>
+                    </div>
+              <div class="form-group">
+                  <button class="btn btn-success">UPDATE</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <%-include('__bootstrap.ejs')%>
+    </head>
+    <body>
+        <%-include('__header.ejs')%>
+        <div class="container">
+            <div class="row">
+                   <%for(let index in categoryList){%> 
+                    <div class="col-md-3 p-2">  
+                      <div class="category d-flex flex-column align-items-center justify-content-center" style="box-shadow: 10px 10px 10px grey; height:120px;">
+                         <h6><%=categoryList[index].title%></h6>
+                         <!-- <h4 class="text-success"><%=productList[index].price%> Rs.</h4> -->
+                         <div class="d-flex flex-row justify-content-around" style="width:100%;">
+                           <a onclick="return confirm('Do you want to delete ?')" href="/category/delete/<%=categoryList[index].id%>"> 
+                            <button class="btn btn-outline-danger" style="width:100px;">Delete</button>
+                          </a>  
+                          <a href=c>
+                            <button class="btn btn-primary" style="width:100px;">Edit</button>
+                          </a> 
+                        </div>
+                      </div>
+                    </div>
+                    <%}%>
+            </div>
+        </div>
+    </body>
+</html>
